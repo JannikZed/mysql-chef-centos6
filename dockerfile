@@ -1,7 +1,7 @@
 # Dockerfile to have a running centos6 installation with chefdk 
 FROM centos:6
 RUN curl -O http://cdn.mysql.com/archives/mysql-5.6/MySQL-5.6.19-1.el6.x86_64.rpm-bundle.tar
-RUN tar MySQL-5.6.19-1.el6.x86_64.rpm-bundle.tar
+RUN tar -xf MySQL-5.6.19-1.el6.x86_64.rpm-bundle.tar
 RUN yum localinstall -y MySQL-server-5.6.19-1.el6.x86_64.rpm MySQL-client-5.6.19-1.el6.x86_64.rpm
 
 RUN rpm --import https://downloads.chef.io/packages-chef-io-public.key

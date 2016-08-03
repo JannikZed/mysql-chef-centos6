@@ -11,3 +11,5 @@ RUN mv chef-stable.repo /etc/yum.repos.d/
 
 RUN yum makecache fast
 RUN yum install -y chef-12.11.18-1.el6.x86_64
+
+RUN rm -rf *

@@ -5,7 +5,7 @@ RUN tar -xf MySQL-5.6.19-1.el6.x86_64.rpm-bundle.tar
 RUN yum localinstall -y MySQL-server-5.6.19-1.el6.x86_64.rpm MySQL-client-5.6.19-1.el6.x86_64.rpm
 RUN /etc/init.d/mysql start
 RUN mysqlpass=$(grep -o '.\{16\}$' /root/.mysql_secret) && cat /root/.mysql_secret && echo $mysqlpass \
-&& echo -e "$mysqlpass\ny\nmysecret\nmysecret\n\n\ny\n\n " | mysql_secure_installation
+RUN echo -e "$mysqlpass\ny\nmysecret\nmysecret\n\n\ny\n\n " | mysql_secure_installation
 
 # Install chef-client
 RUN rpm --import https://downloads.chef.io/packages-chef-io-public.key
